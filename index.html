@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Eldoramix — 20 Mars 2027 — Condrieu</title>
+    <link rel="icon" type="image/png" href="img/EX_small.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Trame industrielle permanente -->
+    <div class="scanlines-overlay"></div>
+
+    <!-- Barre de navigation discrète -->
+    <nav class="top-nav">
+        <img src="img/EX_small.png" alt="Logo EX" class="nav-logo">
+        <span class="nav-tagline">Electronic Festival</span>
+    </nav>
+
+    <!-- 1. Hero Full Screen Ultra-Épuré (100vh) -->
+    <header class="hero">
+        <img src="img/EX_full.png" alt="Festival Eldoramix" class="hero-main-logo">
+
+        <div class="hero-meta">
+            <div class="hero-date">20 Mars 2027</div>
+            <div class="hero-location">Condrieu</div>
+        </div>
+    </header>
+
+    <!-- 2. Deuxième section : Compteur & Action Rapide -->
+    <section class="countdown-action-section">
+        <div class="countdown-action-container">
+            <div class="countdown-title">Ouverture des portes dans</div>
+
+            <div class="countdown" id="eventCountdown">
+                <div class="count-box">
+                    <span class="count-value" id="countDays">00</span>
+                    <span class="count-label">Jours</span>
+                </div>
+                <div class="count-box">
+                    <span class="count-value" id="countHours">00</span>
+                    <span class="count-label">Heures</span>
+                </div>
+                <div class="count-box">
+                    <span class="count-value" id="countMinutes">00</span>
+                    <span class="count-label">Min</span>
+                </div>
+                <div class="count-box">
+                    <span class="count-value" id="countSeconds">00</span>
+                    <span class="count-label">Sec</span>
+                </div>
+            </div>
+
+            <a href="#billetterie" class="btn-primary">Prendre ma place</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- 3. Section Line-up -->
+        <section id="lineup">
+            <h2 class="section-title">Programmation</h2>
+
+            <div class="lineup-grid" id="mainLineup">
+                <!-- Carte Benti -->
+                <article class="artist-card">
+                    <div class="artist-img-wrapper">
+                        <img src="img/benti.png" alt="Benti" class="artist-img">
+                    </div>
+                    <div class="artist-content">
+                        <span class="artist-status">Confirmé</span>
+                        <h3 class="artist-name">Benti</h3>
+                        <p class="artist-description">Set électro / Clubbing & Bass music.</p>
+                        <div class="artist-links">
+                            <a href="https://www.instagram.com/benti.music" target="_blank" rel="noopener"
+                                class="artist-link">Instagram</a>
+                            <a href="https://soundcloud.com/benti-music" target="_blank" rel="noopener"
+                                class="artist-link">SoundCloud</a>
+                            <a href="https://www.facebook.com/benti.music" target="_blank" rel="noopener"
+                                class="artist-link">Facebook</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Teasers -->
+                <article class="artist-card teaser">
+                    <div class="teaser-heading">Prochainement</div>
+                    <p class="artist-description">Phase 2 en cours de révélation</p>
+                </article>
+
+                <article class="artist-card teaser">
+                    <div class="teaser-heading">And More...</div>
+                    <p class="artist-description">Line-up complet révélé sur nos réseaux</p>
+                </article>
+            </div>
+
+            <!-- Zone réservée aux prochains artistes -->
+            <div class="extra-artists" id="extraArtists">
+                <!-- Ajoutez ici de nouveaux blocs <article class="artist-card">...</article> -->
+            </div>
+
+            <div class="artist-toggle-container">
+                <button type="button" class="btn-secondary" id="toggleArtistsBtn">Afficher tous les artistes</button>
+            </div>
+        </section>
+
+        <!-- 4. Section Billetterie -->
+        <section id="billetterie">
+            <h2 class="section-title">Billetterie</h2>
+
+            <div class="ticket-wrapper">
+                <div class="ticket-tiers">
+                    <div class="tier-item">
+                        <div class="tier-name">Billet Phase 1 : Early Bird</div>
+                        <div class="tier-price">15 €</div>
+                        <div class="tier-note">Quantité limitée aux 100 premiers</div>
+                    </div>
+                    <div class="tier-item">
+                        <div class="tier-name">Toutes les phases : Billet VIP</div>
+                        <div class="tier-price">50 €</div>
+                        <div class="tier-note">Espace dédié & bar privatif (1 boisson incluse)</div>
+                    </div>
+                </div>
+
+                <div class="ha-frame-shell">
+                    <iframe id="haWidget" allow="payment"
+                        src="https://www.helloasso.com/associations/sonorisation-eldoradance/evenements/test/widget">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 5. Section Partenaires (Positionnée avant les infos pratiques) -->
+    <section class="partners-section" id="partenaires">
+        <div class="container">
+            <h2 class="section-title">Ils nous soutiennent</h2>
+            <p class="section-subtitle">
+                Sans partenaires, pas de festival à prix accessible ! Un immense merci à celles et ceux qui rendent
+                cette aventure possible dans une démarche commune gagnant / gagnant.
+            </p>
+        </div>
+
+        <!-- Piste de défilement infini de droite à gauche -->
+        <div class="marquee-wrapper">
+            <div class="marquee-track">
+                <!-- Groupe 1 -->
+                <div class="marquee-group">
+                    <!-- Logo Mairie de Condrieu -->
+                    <a href="https://www.condrieu.fr/" target="_blank" rel="noopener" class="partner-item"
+                        title="Mairie de Condrieu">
+                        <img src="img/logo_condrieu.jpg" alt="Mairie de Condrieu" class="partner-logo"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span class="partner-fallback" style="display:none;">Condrieu</span>
+                    </a>
+
+                    <!-- Logo Just'un Regard -->
+                    <a href="https://justunregard.com/boutique/justun-regard-condrieu/" target="_blank" rel="noopener"
+                        class="partner-item" title="Just'un Regard Condrieu">
+                        <img src="img/logo_justunregard.png" alt="Just'un Regard" class="partner-logo"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span class="partner-fallback" style="display:none;">Just'un Regard</span>
+                        <span class="partner-sub">Condrieu</span>
+                    </a>
+                </div>
+
+                <!-- Groupe 2 (Duplicata strict pour assurer la boucle sans à-coup) -->
+                <div class="marquee-group" aria-hidden="true">
+                    <a href="https://www.condrieu.fr/" target="_blank" rel="noopener" class="partner-item"
+                        title="Mairie de Condrieu">
+                        <img src="img/logo_condrieu.jpg" alt="Mairie de Condrieu" class="partner-logo"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span class="partner-fallback" style="display:none;">Condrieu</span>
+                    </a>
+
+                    <a href="https://justunregard.com/boutique/justun-regard-condrieu/" target="_blank" rel="noopener"
+                        class="partner-item" title="Just'un Regard Condrieu">
+                        <img src="img/logo_justunregard.png" alt="Just'un Regard" class="partner-logo"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span class="partner-fallback" style="display:none;">Just'un Regard</span>
+                        <span class="partner-sub">Condrieu</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- 6. Section Infos Pratiques -->
+        <section id="infos">
+            <h2 class="section-title">Infos Pratiques</h2>
+
+            <div class="practical-grid">
+                <div class="info-card">
+                    <h3>Accès & Localisation</h3>
+                    <p>Salle de spectacle de l'Arbuel<br>Place du Marché aux Fruits, 69420 Condrieu.</p>
+                    <a href="https://maps.google.com/?q=Salle+de+l%27Arbuel+Place+du+March%C3%A9+aux+Fruits+Condrieu"
+                        target="_blank" rel="noopener" class="map-btn">
+                        Ouvrir sur Google Maps &rarr;
+                    </a>
+                </div>
+
+                <div class="info-card">
+                    <h3>Horaires de l'événement</h3>
+                    <p>Samedi 20 Mars 2027.<br>Ouverture des portes : 18h00.<br>Fin de l'événement au cœur de la nuit.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Sur Place</h3>
+                    <p>Bar associatif & restauration locale.<br>Espace vestiaire sécurisé et stand de prévention.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Section Festival Engagé (Responsable, local et solidaire) -->
+        <section id="engagements">
+            <h2 class="section-title">Un Festival Engagé</h2>
+            <p class="section-subtitle">
+                ELDORAMIX souhaite réduire autant que possible son empreinte carbone et porter une démarche responsable,
+                locale et solidaire.
+            </p>
+
+            <div class="engagements-grid">
+                <div class="engagement-card">
+                    <h3>Infrastructures Existantes</h3>
+                    <p>
+                        Nous avons fait le choix d’utiliser des infrastructures de spectacle déjà existantes plutôt que
+                        de recréer entièrement un site événementiel nécessitant l’acheminement de multiples véhicules et
+                        structures lourdes.
+                    </p>
+                </div>
+
+                <div class="engagement-card">
+                    <h3>Matériel & Logistique Courte</h3>
+                    <p>
+                        Le matériel technique nécessaire au festival parcourt une faible distance, limitant ainsi
+                        fortement les transports et émissions liés à l’organisation logistique.
+                    </p>
+                </div>
+
+                <div class="engagement-card">
+                    <h3>Tri & Sensibilisation</h3>
+                    <p>
+                        Avec le soutien de la Mairie de Condrieu, une attention particulière est portée à la gestion des
+                        déchets avec des bacs de tri sélectif et une équipe de bénévoles dédiés à la sensibilisation des
+                        festivaliers.
+                    </p>
+                </div>
+
+                <div class="engagement-card">
+                    <h3>Mobilité & Restauration Locale</h3>
+                    <p>
+                        Nous encourageons les transports collectifs et le covoiturage. Côté restauration, nos
+                        prestataires privilégient les produits locaux et des contenants compostables ou à faible impact
+                        environnemental.
+                    </p>
+                </div>
+
+                <!-- Bloc Solidarité Sapeurs-Pompiers -->
+                <div class="engagement-card solidarity">
+                    <span class="solidarity-badge">Action Solidaire & Locale</span>
+                    <h3>Soutien à l'Amicale des Sapeurs-Pompiers de Condrieu</h3>
+                    <p>
+                        Une partie des sommes collectées lors de l’événement sera directement reversée à
+                        l’<strong>Amicale des Sapeurs-Pompiers de Condrieu</strong>. Face à l’augmentation des risques
+                        liés aux épisodes climatiques extrêmes, nous avons souhaité soutenir celles et ceux qui
+                        interviennent quotidiennement pour protéger la population, en contribuant à l’amélioration de
+                        leurs conditions au sein de leur caserne.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 8. Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2027 Association Sonorisation Eldoradance — Tous droits réservés.</p>
+            <p style="margin-top: 0.5rem;"><a href="mentions-legales.html">Mentions légales</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts : Compteur et Toggle des artistes -->
+    <script>
+        // 1. Compteur pour le 20 Mars 2027 à 18h00
+        (function () {
+            const targetDate = new Date('2027-03-20T18:00:00').getTime();
+
+            function updateCounter() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                if (distance <= 0) {
+                    document.getElementById('eventCountdown').innerHTML = "<div class='count-box'><span class='count-value'>C'EST LE JOUR J</span></div>";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('countDays').textContent = String(days).padStart(2, '0');
+                document.getElementById('countHours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('countMinutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('countSeconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateCounter();
+            setInterval(updateCounter, 1000);
+        })();
+
+        // 2. Gestion du bouton "Afficher tous les artistes"
+        (function () {
+            const toggleBtn = document.getElementById('toggleArtistsBtn');
+            const extraArtists = document.getElementById('extraArtists');
+
+            toggleBtn.addEventListener('click', function () {
+                const isOpen = extraArtists.classList.toggle('open');
+                toggleBtn.textContent = isOpen ? 'Masquer la suite' : 'Afficher tous les artistes';
+            });
+        })();
+    </script>
+</body>
+
+</html>

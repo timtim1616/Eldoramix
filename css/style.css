@@ -1,0 +1,772 @@
+/* ==========================================================================
+   Typographies
+   ========================================================================== */
+@font-face {
+  font-family: 'Chorus';
+  src: url('../fonts/CHORUS-BOLD.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Chorus';
+  src: url('../fonts/CHORUS-BOLD-ITALIC.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anuphan';
+  src: url('../fonts/Anuphan-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   Variables & Thème
+   ========================================================================== */
+:root {
+  --bg-core: #070809;
+  --bg-surface: #070809;
+  --bg-card: #111317;
+  --red-neon: #ff2020;
+  --red-glow: rgba(255, 32, 32, 0.45);
+  --text-white: #f5f6f8;
+  --text-dim: #9aa0a6;
+  --border-line: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(255, 32, 32, 0.35);
+  --font-display: 'Chorus', Impact, sans-serif;
+  --font-text: 'Anuphan', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-core);
+}
+
+body {
+  background-color: var(--bg-core);
+  color: var(--text-white);
+  font-family: var(--font-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Scanlines permanentes */
+.scanlines-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02) 0px,
+    rgba(255, 255, 255, 0.02) 1px,
+    transparent 1px,
+    transparent 5px
+  );
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Navigation */
+.top-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+}
+
+.nav-logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-tagline {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Hero Section Ultra-Épuré (100vh)
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1.5rem 2rem;
+  background: 
+    linear-gradient(
+      180deg, 
+      rgba(7, 8, 9, 0.35) 0%, 
+      rgba(7, 8, 9, 0.15) 45%, 
+      rgba(7, 8, 9, 0.65) 80%, 
+      var(--bg-core) 100%
+    ),
+    url('../img/bg_hero.png') center 65% / cover no-repeat;
+  border-bottom: none;
+}
+
+.hero-main-logo {
+  max-width: 480px;
+  width: 82%;
+  height: auto;
+  margin-bottom: 2.5rem;
+  filter: drop-shadow(0 0 35px rgba(0, 0, 0, 0.95));
+}
+
+.hero-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-date {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7.5vw, 5.5rem);
+  letter-spacing: 3px;
+  color: var(--red-neon);
+  line-height: 1;
+  text-transform: uppercase;
+  text-shadow: 0 0 25px rgba(255, 32, 32, 0.4);
+}
+
+.hero-location {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 600;
+  color: var(--text-white);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-top: 0.8rem;
+}
+
+/* ==========================================================================
+   Deuxième section : Compteur & Action Rapide
+   ========================================================================== */
+.countdown-action-section {
+  background-color: var(--bg-core);
+  padding: 2rem 1.5rem 5rem;
+  border-bottom: 1px solid var(--border-line);
+  position: relative;
+}
+
+.countdown-action-container {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.countdown-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
+  max-width: 520px;
+}
+
+.count-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-line);
+  padding: 0.85rem 0.5rem;
+  border-radius: 4px;
+  flex: 1;
+  min-width: 65px;
+  text-align: center;
+}
+
+.count-value {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+  color: var(--text-white);
+  line-height: 1;
+  display: block;
+}
+
+.count-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--red-neon);
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-top: 0.35rem;
+  display: block;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--red-neon);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.15rem 3rem;
+  border-radius: 4px;
+  box-shadow: 0 0 25px var(--red-glow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(255, 32, 32, 0.8);
+}
+
+/* ==========================================================================
+   Sections standards
+   ========================================================================== */
+section {
+  padding: 6rem 0;
+  border-bottom: 1px solid var(--border-line);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  color: var(--red-neon);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  max-width: 780px;
+  margin: 0 auto 3.5rem;
+}
+
+/* ==========================================================================
+   Grille Line-up & Artistes
+   ========================================================================== */
+.lineup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2rem;
+}
+
+.artist-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-line);
+  border-top: 4px solid var(--red-neon);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-img-wrapper {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  background-color: #000;
+  position: relative;
+}
+
+.artist-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.artist-card:hover .artist-img {
+  transform: scale(1.03);
+}
+
+.artist-content {
+  padding: 1.8rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.artist-status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--red-neon);
+  display: block;
+}
+
+.artist-name {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 7vw, 4.8rem);
+  line-height: 0.95;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-white);
+  margin: 0.6rem 0 0.8rem;
+}
+
+.artist-description {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.artist-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.artist-link {
+  color: var(--text-white);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--red-neon);
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+}
+
+.artist-link:hover {
+  color: var(--red-neon);
+}
+
+/* Cartes Teaser */
+.artist-card.teaser {
+  border-top: 4px solid var(--border-line);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 380px;
+  padding: 2.5rem 1.5rem;
+}
+
+.teaser-heading {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+/* Bouton Afficher tous les artistes */
+.artist-toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-white);
+  border: 1px solid var(--border-highlight);
+  font-family: var(--font-text);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 32, 32, 0.15);
+  border-color: var(--red-neon);
+}
+
+.extra-artists {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.extra-artists.open {
+  display: grid;
+}
+
+/* ==========================================================================
+   Section Partenaires & Défilement Infini (Marquee)
+   ========================================================================== */
+.partners-section {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1.5rem 0;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scrollMarquee 26s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  padding-right: 3.5rem;
+}
+
+.partner-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border-line);
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  min-width: 220px;
+  height: 95px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.partner-item:hover {
+  border-color: var(--red-neon);
+  transform: translateY(-2px);
+}
+
+.partner-logo {
+  max-height: 48px;
+  max-width: 160px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(1.2);
+  transition: filter 0.2s ease;
+}
+
+.partner-item:hover .partner-logo {
+  filter: grayscale(0%) brightness(1);
+}
+
+.partner-fallback {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-white);
+  line-height: 1;
+}
+
+.partner-sub {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.25rem;
+}
+
+@keyframes scrollMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==========================================================================
+   Section Infos Pratiques
+   ========================================================================== */
+.practical-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-line);
+  padding: 2rem;
+  border-radius: 6px;
+}
+
+.info-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--red-neon);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.info-card p {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+}
+
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  color: var(--text-white);
+  background: transparent;
+  border: 1px solid var(--border-highlight);
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.map-btn:hover {
+  background: rgba(255, 32, 32, 0.15);
+  border-color: var(--red-neon);
+}
+
+/* ==========================================================================
+   Section Engagements
+   ========================================================================== */
+.engagements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.engagement-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-line);
+  padding: 2rem;
+  border-radius: 6px;
+  position: relative;
+}
+
+.engagement-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--red-neon);
+  margin-bottom: 0.8rem;
+}
+
+.engagement-card p {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.engagement-card.solidarity {
+  border: 1px solid var(--border-highlight);
+  background: linear-gradient(180deg, rgba(255, 32, 32, 0.05) 0%, var(--bg-card) 100%);
+  grid-column: 1 / -1;
+}
+
+.solidarity-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--red-neon);
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   Billetterie
+   ========================================================================== */
+.ticket-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.ticket-tiers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.tier-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-line);
+  padding: 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.tier-name {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  margin-bottom: 0.3rem;
+}
+
+.tier-price {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--red-neon);
+  line-height: 1.2;
+}
+
+.tier-note {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.ha-frame-shell {
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+}
+
+#haWidget {
+  width: 100%;
+  height: 850px;
+  border: none;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+  padding: 3rem 0;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  background: var(--bg-core);
+}
+
+footer a {
+  color: var(--text-dim);
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: var(--red-neon);
+}
+
+/* ==========================================================================
+   Adaptations Mobiles
+   ========================================================================== */
+@media (max-width: 600px) {
+  .top-nav {
+    padding: 1rem 1.2rem;
+  }
+  
+  .nav-tagline {
+    display: none;
+  }
+
+  .hero {
+    padding: 4rem 1rem 1.5rem;
+    background-position: center center;
+  }
+
+  .hero-main-logo {
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-location {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .countdown-action-section {
+    padding: 1rem 1rem 3.5rem;
+  }
+
+  .countdown {
+    gap: 0.4rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .count-box {
+    min-width: 0;
+    padding: 0.5rem 0.2rem;
+  }
+
+  .count-value {
+    font-size: 1.7rem;
+  }
+
+  .count-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.5px;
+  }
+
+  .btn-primary {
+    padding: 0.95rem 2.2rem;
+    font-size: 1rem;
+  }
+
+  .artist-img-wrapper {
+    height: 260px;
+  }
+}

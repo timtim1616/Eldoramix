@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Festival Eldoramix — 20 Mars 2027 — Condrieu</title>
-    <link rel="icon" type="image/png" href="img/EX_small.png">
+    <link rel="icon" type="image/webp" href="img/EX_small.webp">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -15,13 +15,13 @@
 
     <!-- Barre de navigation discrète -->
     <nav class="top-nav">
-        <img src="img/EX_small.png" alt="Logo EX" class="nav-logo">
+        <img src="img/EX_small.webp" alt="Logo EX" class="nav-logo">
         <span class="nav-tagline">Electronic Festival</span>
     </nav>
 
     <!-- 1. Hero Full Screen Ultra-Épuré (100vh) -->
     <header class="hero">
-        <img src="img/EX_full.png" alt="Festival Eldoramix" class="hero-main-logo">
+        <img src="img/EX_full.webp" alt="Festival Eldoramix" class="hero-main-logo">
 
         <div class="hero-meta">
             <div class="hero-date">20 Mars 2027</div>
@@ -66,7 +66,7 @@
                 <!-- Carte Benti -->
                 <article class="artist-card">
                     <div class="artist-img-wrapper">
-                        <img src="img/benti.png" alt="Benti" class="artist-img">
+                        <img src="img/benti.webp" alt="Benti" class="artist-img">
                     </div>
                     <div class="artist-content">
                         <span class="artist-status">Confirmé</span>
@@ -97,7 +97,7 @@
 
             <!-- Zone réservée aux prochains artistes -->
             <div class="extra-artists" id="extraArtists">
-                <!-- Ajoutez ici de nouveaux blocs <article class="artist-card">...</article> -->
+                <!-- Nouveaux artistes à insérer ici -->
             </div>
 
             <div class="artist-toggle-container">
@@ -105,21 +105,46 @@
             </div>
         </section>
 
-        <!-- 4. Section Billetterie -->
+        <!-- 4. Section Billetterie avec Grille Tarifaire Complète -->
         <section id="billetterie">
             <h2 class="section-title">Billetterie</h2>
+            <p class="section-subtitle">
+                Les tarifs évoluent par paliers au fil des ventes. Réservez votre billet au plus tôt pour profiter du
+                meilleur tarif !
+            </p>
 
             <div class="ticket-wrapper">
                 <div class="ticket-tiers">
-                    <div class="tier-item">
-                        <div class="tier-name">Billet Phase 1 : Early Bird</div>
+                    <!-- Phase 1 : Actuelle -->
+                    <div class="tier-item current">
+                        <span class="tier-badge active">En vente</span>
+                        <div class="tier-name">Phase 1 : Early Bird</div>
                         <div class="tier-price">15 €</div>
-                        <div class="tier-note">Quantité limitée aux 100 premiers</div>
+                        <div class="tier-note">Quantité limitée aux 100 premiers billets</div>
                     </div>
-                    <div class="tier-item">
-                        <div class="tier-name">Toutes les phases : Billet VIP</div>
+
+                    <!-- Phase 2 : À venir -->
+                    <div class="tier-item locked">
+                        <span class="tier-badge upcoming">Prochainement</span>
+                        <div class="tier-name">Phase 2 : Regular</div>
+                        <div class="tier-price">20 €</div>
+                        <div class="tier-note">Disponible dès épuisement de la Phase 1</div>
+                    </div>
+
+                    <!-- Phase 3 : À venir -->
+                    <div class="tier-item locked">
+                        <span class="tier-badge upcoming">Prochainement</span>
+                        <div class="tier-name">Phase 3 : Late</div>
+                        <div class="tier-price">25 €</div>
+                        <div class="tier-note">Dernières places avant l'événement</div>
+                    </div>
+
+                    <!-- Billet VIP -->
+                    <div class="tier-item vip">
+                        <span class="tier-badge vip">Quantité très limitée</span>
+                        <div class="tier-name">Toutes Phases : Billet VIP</div>
                         <div class="tier-price">50 €</div>
-                        <div class="tier-note">Espace dédié & bar privatif (1 boisson incluse)</div>
+                        <div class="tier-note">Espace dédié & bar privatif (1 boisson offerte)</div>
                     </div>
                 </div>
 
@@ -132,7 +157,7 @@
         </section>
     </div>
 
-    <!-- 5. Section Partenaires (Positionnée avant les infos pratiques) -->
+    <!-- 5. Section Partenaires avec Défilement Continu Infini -->
     <section class="partners-section" id="partenaires">
         <div class="container">
             <h2 class="section-title">Ils nous soutiennent</h2>
@@ -142,41 +167,72 @@
             </p>
         </div>
 
-        <!-- Piste de défilement infini de droite à gauche -->
         <div class="marquee-wrapper">
             <div class="marquee-track">
                 <!-- Groupe 1 -->
                 <div class="marquee-group">
-                    <!-- Logo Mairie de Condrieu -->
                     <a href="https://www.condrieu.fr/" target="_blank" rel="noopener" class="partner-item"
                         title="Mairie de Condrieu">
-                        <img src="img/logo_condrieu.jpg" alt="Mairie de Condrieu" class="partner-logo"
+                        <img src="img/logo_condrieu.webp" alt="Mairie de Condrieu" class="partner-logo"
                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                         <span class="partner-fallback" style="display:none;">Condrieu</span>
+                        <span class="partner-sub">Partenaire Officiel</span>
                     </a>
 
-                    <!-- Logo Just'un Regard -->
                     <a href="https://justunregard.com/boutique/justun-regard-condrieu/" target="_blank" rel="noopener"
                         class="partner-item" title="Just'un Regard Condrieu">
-                        <img src="img/logo_justunregard.png" alt="Just'un Regard" class="partner-logo"
+                        <img src="img/logo_justunregard.webp" alt="Just'un Regard" class="partner-logo"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span class="partner-fallback" style="display:none;">Just'un Regard</span>
+                        <span class="partner-sub">Condrieu</span>
+                    </a>
+
+                    <a href="https://www.condrieu.fr/" target="_blank" rel="noopener" class="partner-item"
+                        title="Mairie de Condrieu">
+                        <img src="img/logo_condrieu.webp" alt="Mairie de Condrieu" class="partner-logo"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span class="partner-fallback" style="display:none;">Condrieu</span>
+                        <span class="partner-sub">Partenaire Officiel</span>
+                    </a>
+
+                    <a href="https://justunregard.com/boutique/justun-regard-condrieu/" target="_blank" rel="noopener"
+                        class="partner-item" title="Just'un Regard Condrieu">
+                        <img src="img/logo_justunregard.webp" alt="Just'un Regard" class="partner-logo"
                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                         <span class="partner-fallback" style="display:none;">Just'un Regard</span>
                         <span class="partner-sub">Condrieu</span>
                     </a>
                 </div>
 
-                <!-- Groupe 2 (Duplicata strict pour assurer la boucle sans à-coup) -->
+                <!-- Groupe 2 -->
                 <div class="marquee-group" aria-hidden="true">
                     <a href="https://www.condrieu.fr/" target="_blank" rel="noopener" class="partner-item"
                         title="Mairie de Condrieu">
-                        <img src="img/logo_condrieu.jpg" alt="Mairie de Condrieu" class="partner-logo"
+                        <img src="img/logo_condrieu.webp" alt="Mairie de Condrieu" class="partner-logo"
                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                         <span class="partner-fallback" style="display:none;">Condrieu</span>
+                        <span class="partner-sub">Partenaire Officiel</span>
                     </a>
 
                     <a href="https://justunregard.com/boutique/justun-regard-condrieu/" target="_blank" rel="noopener"
                         class="partner-item" title="Just'un Regard Condrieu">
-                        <img src="img/logo_justunregard.png" alt="Just'un Regard" class="partner-logo"
+                        <img src="img/logo_justunregard.webp" alt="Just'un Regard" class="partner-logo"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span class="partner-fallback" style="display:none;">Just'un Regard</span>
+                        <span class="partner-sub">Condrieu</span>
+                    </a>
+
+                    <a href="https://www.condrieu.fr/" target="_blank" rel="noopener" class="partner-item"
+                        title="Mairie de Condrieu">
+                        <img src="img/logo_condrieu.webp" alt="Mairie de Condrieu" class="partner-logo"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span class="partner-fallback" style="display:none;">Condrieu</span>
+                        <span class="partner-sub">Partenaire Officiel</span>
+                    </a>
+
+                    <a href="https://justunregard.com/boutique/justun-regard-condrieu/" target="_blank" rel="noopener"
+                        class="partner-item" title="Just'un Regard Condrieu">
+                        <img src="img/logo_justunregard.webp" alt="Just'un Regard" class="partner-logo"
                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                         <span class="partner-fallback" style="display:none;">Just'un Regard</span>
                         <span class="partner-sub">Condrieu</span>
@@ -209,67 +265,70 @@
 
                 <div class="info-card">
                     <h3>Sur Place</h3>
-                    <p>Bar associatif & restauration locale.<br>Espace vestiaire sécurisé et stand de prévention.</p>
+                    <p>Bar associatif & restauration locale.<br>Espace vestiaire</p>
                 </div>
             </div>
         </section>
 
-        <!-- 7. Section Festival Engagé (Responsable, local et solidaire) -->
+        <!-- 7. Section Festival Engagé (Agencement 2x2 + Grand bloc solidaire) -->
         <section id="engagements">
             <h2 class="section-title">Un Festival Engagé</h2>
             <p class="section-subtitle">
-                ELDORAMIX souhaite réduire autant que possible son empreinte carbone et porter une démarche responsable,
-                locale et solidaire.
+                ELDORAMIX s'engage pour limiter son empreinte environnementale et bâtir une fête responsable, ancrée
+                dans son territoire et solidaire.
             </p>
 
             <div class="engagements-grid">
                 <div class="engagement-card">
+                    <div class="engagement-card-icon">01</div>
                     <h3>Infrastructures Existantes</h3>
                     <p>
-                        Nous avons fait le choix d’utiliser des infrastructures de spectacle déjà existantes plutôt que
-                        de recréer entièrement un site événementiel nécessitant l’acheminement de multiples véhicules et
-                        structures lourdes.
+                        Nous utilisons des infrastructures de spectacle déjà implantées plutôt que d'ériger un site
+                        éphémère. Cela évite l’acheminement lourd de multiples structures métalliques et réduit
+                        significativement les convois routiers.
                     </p>
                 </div>
 
                 <div class="engagement-card">
-                    <h3>Matériel & Logistique Courte</h3>
+                    <div class="engagement-card-icon">02</div>
+                    <h3>Logistique & Matériel Court</h3>
                     <p>
-                        Le matériel technique nécessaire au festival parcourt une faible distance, limitant ainsi
-                        fortement les transports et émissions liés à l’organisation logistique.
+                        Le matériel sonore et technique nécessaire au festival parcourt une distance minimale, limitant
+                        les émissions de CO₂ associées à l’organisation logistique en amont comme au démontage.
                     </p>
                 </div>
 
                 <div class="engagement-card">
-                    <h3>Tri & Sensibilisation</h3>
+                    <div class="engagement-card-icon">03</div>
+                    <h3>Tri & Sensibilisation Active</h3>
                     <p>
-                        Avec le soutien de la Mairie de Condrieu, une attention particulière est portée à la gestion des
-                        déchets avec des bacs de tri sélectif et une équipe de bénévoles dédiés à la sensibilisation des
-                        festivaliers.
+                        Avec le soutien de la Mairie de Condrieu, des points de tri sélectif sont déployés sur
+                        l'ensemble du site. Une équipe de bénévoles formés accompagne et sensibilise le public tout au
+                        long de la soirée.
                     </p>
                 </div>
 
                 <div class="engagement-card">
+                    <div class="engagement-card-icon">04</div>
                     <h3>Mobilité & Restauration Locale</h3>
                     <p>
-                        Nous encourageons les transports collectifs et le covoiturage. Côté restauration, nos
-                        prestataires privilégient les produits locaux et des contenants compostables ou à faible impact
-                        environnemental.
+                        Nous incitons au covoiturage et aux transports collectifs. Nos prestataires de restauration sont
+                        sélectionnés pour leurs circuits courts, privilégiant des produits locaux et des emballages
+                        compostables.
                     </p>
                 </div>
+            </div>
 
-                <!-- Bloc Solidarité Sapeurs-Pompiers -->
-                <div class="engagement-card solidarity">
-                    <span class="solidarity-badge">Action Solidaire & Locale</span>
-                    <h3>Soutien à l'Amicale des Sapeurs-Pompiers de Condrieu</h3>
-                    <p>
-                        Une partie des sommes collectées lors de l’événement sera directement reversée à
-                        l’<strong>Amicale des Sapeurs-Pompiers de Condrieu</strong>. Face à l’augmentation des risques
-                        liés aux épisodes climatiques extrêmes, nous avons souhaité soutenir celles et ceux qui
-                        interviennent quotidiennement pour protéger la population, en contribuant à l’amélioration de
-                        leurs conditions au sein de leur caserne.
-                    </p>
-                </div>
+            <div class="solidarity-banner">
+                <div class="solidarity-badge">Engagement Solidaire & Local</div>
+                <h3>Soutien à l'Amicale des Sapeurs-Pompiers de Condrieu</h3>
+                <p>
+                    Une partie des sommes collectées lors de l’événement sera directement reversée à l’<strong>Amicale
+                        des Sapeurs-Pompiers de Condrieu</strong>. Face à l’augmentation des risques liés aux épisodes
+                    climatiques extrêmes, nous avons souhaité soutenir celles et ceux qui interviennent quotidiennement
+                    pour protéger la population, en contribuant à l’amélioration de leurs conditions de vie au sein de
+                    leur caserne.
+                </p>
             </div>
         </section>
     </div>
@@ -282,9 +341,9 @@
         </div>
     </footer>
 
-    <!-- Scripts : Compteur et Toggle des artistes -->
+    <!-- Scripts -->
     <script>
-        // 1. Compteur pour le 20 Mars 2027 à 18h00
+        // Compteur
         (function () {
             const targetDate = new Date('2027-03-20T18:00:00').getTime();
 
@@ -312,7 +371,7 @@
             setInterval(updateCounter, 1000);
         })();
 
-        // 2. Gestion du bouton "Afficher tous les artistes"
+        // Toggle des artistes
         (function () {
             const toggleBtn = document.getElementById('toggleArtistsBtn');
             const extraArtists = document.getElementById('extraArtists');

@@ -1,0 +1,24 @@
+name: Deploiement Automatique VPS
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Connexion SSH et mise à jour du site
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/eldoramix
+            git pull origin main || git pull origin master
+            chown -R www-data:www-data /var/www/eldoramix
+            chmod -R 755 /var/www/eldoramix

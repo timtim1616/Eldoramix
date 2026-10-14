@@ -2,7 +2,6 @@
 <html lang="fr">
 
 <head>
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Festival Eldoramix — 20 Mars 2027 — Condrieu</title>
@@ -43,6 +42,7 @@
     <meta name="twitter:description"
         content="Festival de musiques électroniques le 20 Mars 2027 à Condrieu. Retrouvez la programmation et réservez votre billet.">
     <meta name="twitter:image" content="https://eldoramix.fr/img/og-preview.jpg">
+</head>
 
 <body>
     <!-- Trame industrielle permanente -->
@@ -140,49 +140,29 @@
             </div>
         </section>
 
-        <!-- 4. Section Billetterie avec Grille Tarifaire Complète -->
+        <!-- 4. Section Billetterie -->
         <section id="billetterie">
             <h2 class="section-title">Billetterie</h2>
-            <p class="section-subtitle">
-                Les tarifs évoluent par paliers au fil des ventes. Réservez votre billet au plus tôt pour profiter du
-                meilleur tarif !
-            </p>
-
+        
             <div class="ticket-wrapper">
                 <div class="ticket-tiers">
-                    <!-- Phase 1 : Actuelle -->
+                    <!-- Phase 1 : Early Bird -->
                     <div class="tier-item current">
-                        <span class="tier-badge active">En vente</span>
-                        <div class="tier-name">Phase 1 : Early Bird</div>
+                        <span class="tier-badge active">Phase 1</span>
+                        <div class="tier-name">Billet Early Bird</div>
                         <div class="tier-price">15 €</div>
                         <div class="tier-note">Quantité limitée aux 100 premiers billets</div>
                     </div>
-
-                    <!-- Phase 2 : À venir -->
-                    <div class="tier-item locked">
-                        <span class="tier-badge upcoming">Prochainement</span>
-                        <div class="tier-name">Phase 2 : Regular</div>
-                        <div class="tier-price">20 €</div>
-                        <div class="tier-note">Disponible dès épuisement de la Phase 1</div>
-                    </div>
-
-                    <!-- Phase 3 : À venir -->
-                    <div class="tier-item locked">
-                        <span class="tier-badge upcoming">Prochainement</span>
-                        <div class="tier-name">Phase 3 : Late</div>
-                        <div class="tier-price">25 €</div>
-                        <div class="tier-note">Dernières places avant l'événement</div>
-                    </div>
-
+        
                     <!-- Billet VIP -->
                     <div class="tier-item vip">
-                        <span class="tier-badge vip">Quantité très limitée</span>
-                        <div class="tier-name">Toutes Phases : Billet VIP</div>
+                        <span class="tier-badge vip">Quantité limitée</span>
+                        <div class="tier-name">Billet VIP</div>
                         <div class="tier-price">50 €</div>
                         <div class="tier-note">Espace dédié & bar privatif (1 boisson offerte)</div>
                     </div>
                 </div>
-
+        
                 <div class="ha-frame-shell">
                     <iframe id="haWidget" allow="payment"
                         src="https://www.helloasso.com/associations/sonorisation-eldoradance/evenements/test/widget">
@@ -286,15 +266,14 @@
                 <div class="info-card">
                     <h3>Accès & Localisation</h3>
                     <p>Salle de spectacle de l'Arbuel<br>Place du Marché aux Fruits, 69420 Condrieu.</p>
-                    <a href="https://maps.google.com/?q=Salle+de+l%27Arbuel+Place+du+March%C3%A9+aux+Fruits+Condrieu"
-                        target="_blank" rel="noopener" class="map-btn">
+                    <a href="https://maps.app.goo.gl/t2jLi3EyVtLcqiB99" target="_blank" rel="noopener" class="map-btn">
                         Ouvrir sur Google Maps &rarr;
                     </a>
                 </div>
 
                 <div class="info-card">
                     <h3>Horaires de l'événement</h3>
-                    <p>Samedi 20 Mars 2027.<br>Ouverture des portes : 18h00.<br>Fin de l'événement au cœur de la nuit.
+                    <p>Samedi 20 Mars 2027.<br>Ouverture des portes : 17h00.<br>Fin de l'événement au cœur de la nuit.
                     </p>
                 </div>
 
@@ -378,9 +357,9 @@
 
     <!-- Scripts -->
     <script>
-        // Compteur
+        // Compteur calé sur 17h00 (une heure plus tôt que 18h00)
         (function () {
-            const targetDate = new Date('2027-03-20T18:00:00').getTime();
+            const targetDate = new Date('2027-03-20T17:00:00').getTime();
 
             function updateCounter() {
                 const now = new Date().getTime();
